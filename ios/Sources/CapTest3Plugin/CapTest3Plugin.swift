@@ -24,6 +24,8 @@ public class CapTest3Plugin: CAPPlugin, CAPBridgedPlugin {
     }
 
     @objc func printSomething(_ call: CAPPluginCall) {
+        let channels = BRLMPrinterSearcher.startBluetoothSearch().channels
+        print(channels.count)
         let value = call.getString("value") ?? ""
         call.resolve([
             "value": ""
