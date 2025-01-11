@@ -9,6 +9,6 @@ export class CapTest3Web extends WebPlugin implements CapTest3Plugin {
   }
 
   async printSomething(options: { value: string; }): Promise<{ value: string; }> {
-    return {value: ""}
+    return {value: options.value}
   }
 }
