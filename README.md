@@ -15,6 +15,7 @@ npx cap sync
 
 * [`echo(...)`](#echo)
 * [`printSomething(...)`](#printsomething)
+* [`getPrinters()`](#getprinters)
 
 </docgen-index>
 
@@ -47,6 +48,17 @@ printSomething(options: { value: string; }) => Promise<{ value: string; }>
 | **`options`** | <code>{ value: string; }</code> |
 
 **Returns:** <code>Promise&lt;{ value: string; }&gt;</code>
+
+--------------------
+
+
+### getPrinters()
+
+```typescript
+getPrinters() => Promise<{ value: string[]; }>
+```
+
+**Returns:** <code>Promise&lt;{ value: string[]; }&gt;</code>
 
 --------------------
 

@@ -10,6 +10,6 @@ export class AppComponent {
   title = 'cap-angular-app';
 
   test() {
-    CapTest3.printSomething({value: "hello"})
+    CapTest3.getPrinters()
   }
 }

@@ -34,7 +34,17 @@ public class CapTest3Plugin: CAPPlugin, CAPBridgedPlugin {
     }
 
     @objc func getPrinters(_ call: CAPPluginCall) {
-      let channels = BRLMPrinterSearcher.startBluetoothSearch().channels
+        let channels = BRLMPrinterSearcher.startBluetoothSearch().channels
+        var models = [String]()
+        for c in channels {
+            let modelName = c.extraInfo?.value(forKey: BRLMChannelExtraInfoKeyModelName) as? String ?? ""
+            models.append(modelName)
+        }
+        call.resolve([
+            "value": models
+        ])
+        
 
+        
     }
 }
