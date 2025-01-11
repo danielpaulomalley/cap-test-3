@@ -1,5 +1,6 @@
 import Foundation
 import Capacitor
+import BRLMPrinterKit
 
 /**
  * Please read the Capacitor iOS Plugin Development Guide
@@ -10,7 +11,7 @@ public class CapTest3Plugin: CAPPlugin, CAPBridgedPlugin {
     public let identifier = "CapTest3Plugin"
     public let jsName = "CapTest3"
     public let pluginMethods: [CAPPluginMethod] = [
-        CAPPluginMethod(name: "echo", returnType: CAPPluginReturnPromise)
+        CAPPluginMethod(name: "echo", returnType: CAPPluginReturnPromise),
         CAPPluginMethod(name: "printSomething", returnType: CAPPluginReturnPromise)
     ]
     private let implementation = CapTest3()
