@@ -11,6 +11,7 @@ public class CapTest3Plugin: CAPPlugin, CAPBridgedPlugin {
     public let jsName = "CapTest3"
     public let pluginMethods: [CAPPluginMethod] = [
         CAPPluginMethod(name: "echo", returnType: CAPPluginReturnPromise)
+        CAPPluginMethod(name: "printSomething", returnType: CAPPluginReturnPromise)
     ]
     private let implementation = CapTest3()
 
@@ -18,6 +19,13 @@ public class CapTest3Plugin: CAPPlugin, CAPBridgedPlugin {
         let value = call.getString("value") ?? ""
         call.resolve([
             "value": implementation.echo(value)
+        ])
+    }
+
+    @objc func printSomething(_ call: CAPPluginCall) {
+        let value = call.getString("value") ?? ""
+        call.resolve([
+            "value": ""
         ])
     }
 }

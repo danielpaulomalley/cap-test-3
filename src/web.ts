@@ -7,4 +7,8 @@ export class CapTest3Web extends WebPlugin implements CapTest3Plugin {
     console.log('ECHO', options);
     return options;
   }
+
+  async printSomething(options: { value: string; }): Promise<{ value: string; }> {
+    return {value: ""}
+  }
 }
