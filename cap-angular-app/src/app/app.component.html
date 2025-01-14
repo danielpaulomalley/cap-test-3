@@ -1,3 +1,19 @@
-<div>
+<div class="outer">
   <button (click)="test()">test</button>
+
+  @if (printers) {
+    <div>
+      <h2>PRINTERS</h2>
+      <table>
+        <tbody>
+          @for (p of printers; track $index) {
+            <tr>
+              <td>{{p}}</td>
+            </tr>
+          }
+        </tbody>
+      </table>
+    </div>
+  }
+
 </div>

@@ -7,9 +7,11 @@ import { CapTest3 } from "cap-test-3";
   styleUrl: './app.component.scss'
 })
 export class AppComponent {
+  printers?: string[]
   title = 'cap-angular-app';
 
-  test() {
-    CapTest3.getPrinters()
+  async test() {
+    const r = await CapTest3.getPrinters()
+    this.printers = r.value
   }
 }
