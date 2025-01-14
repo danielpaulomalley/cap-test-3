@@ -12,7 +12,8 @@ public class CapTest3Plugin: CAPPlugin, CAPBridgedPlugin {
     public let jsName = "CapTest3"
     public let pluginMethods: [CAPPluginMethod] = [
         CAPPluginMethod(name: "echo", returnType: CAPPluginReturnPromise),
-        CAPPluginMethod(name: "printSomething", returnType: CAPPluginReturnPromise)
+        CAPPluginMethod(name: "printSomething", returnType: CAPPluginReturnPromise),
+        CAPPluginMethod(name: "getPrinters", returnType: CAPPluginReturnPromise)
     ]
     private let implementation = CapTest3()
 
@@ -30,5 +31,10 @@ public class CapTest3Plugin: CAPPlugin, CAPBridgedPlugin {
         call.resolve([
             "value": ""
         ])
+    }
+
+    @objc func getPrinters(_ call: CAPPluginCall) {
+      let channels = BRLMPrinterSearcher.startBluetoothSearch().channels
+
     }
 }

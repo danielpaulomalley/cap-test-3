@@ -11,4 +11,8 @@ export class CapTest3Web extends WebPlugin implements CapTest3Plugin {
   async printSomething(options: { value: string; }): Promise<{ value: string; }> {
     return {value: options.value}
   }
+
+  async getPrinters(): Promise<{value: string[]}> {
+    return {value: []}
+  }
 }
